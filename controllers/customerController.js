@@ -4,12 +4,12 @@ const CustomerLog = require("../models/customerLogModel");
 exports.getAllCustomers = async (req, res) => {
   try {
     const customers = await Customer.find();
+    res.send("TEST CUSTOMERS " + JSON.stringify(customers));
     res.status(200).json({
       status: "success",
       data: { customers },
     });
     console.log("TEST CUSTOMERS", customers);
-    res.send("TEST CUSTOMERS " + JSON.stringify(customers));
   } catch (error) {
     res.status(500).json({
       status: "error",
