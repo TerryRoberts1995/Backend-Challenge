@@ -9,6 +9,7 @@ exports.getAllCustomers = async (req, res) => {
       data: { customers },
     });
     console.log("TEST CUSTOMERS", customers);
+    res.send("TEST CUSTOMERS " + JSON.stringify(customers));
   } catch (error) {
     res.status(500).json({
       status: "error",
