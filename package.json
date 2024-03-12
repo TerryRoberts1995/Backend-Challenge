@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,5 +14,8 @@
     "mongod": "^2.0.0",
     "mongoose": "^5.13.22",
     "morgan": "~1.9.1"
+  },
+  "engines": {
+    "node": ">=16.16.0"
   }
 }
