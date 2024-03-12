@@ -8,6 +8,7 @@ exports.getAllCustomers = async (req, res) => {
       status: "success",
       data: { customers },
     });
+    console.log("TEST CUSTOMERS", customers);
   } catch (error) {
     res.status(500).json({
       status: "error",
