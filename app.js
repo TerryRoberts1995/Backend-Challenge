@@ -9,9 +9,7 @@ var app = express();
 
 app.use(express.json());
 app.get("/", (res, req) => {
-  res.json({
-    message: "TESTING",
-  });
+  res.send("TESTING");
 });
 app.use("/customer", customerRouter);
 app.use("/customerLog", customerLogRouter);
