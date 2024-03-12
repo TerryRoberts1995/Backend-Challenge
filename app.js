@@ -8,7 +8,7 @@ var locationRouter = require("./routes/locationRouter");
 var app = express();
 
 app.use(express.json());
-app.get("/", (res, req) => {
+app.get("/", (req, res) => {
   res.send("TESTING");
 });
 app.use("/customer", customerRouter);
