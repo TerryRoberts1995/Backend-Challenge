@@ -4,12 +4,10 @@ const CustomerLog = require("../models/customerLogModel");
 exports.getAllCustomers = async (req, res) => {
   try {
     const customers = await Customer.find();
-    res.send("TEST CUSTOMERS " + JSON.stringify(customers));
     res.status(200).json({
       status: "success",
       data: { customers },
     });
-    console.log("TEST CUSTOMERS", customers);
   } catch (error) {
     res.status(500).json({
       status: "error",
@@ -39,7 +37,7 @@ exports.getCustomer = async (req, res) => {
 exports.createCustomer = async (req, res) => {
   try {
     const newCustomer = await Customer.create(req.body);
-
+    console.log(newCustomer);
     await CustomerLog.create({
       text: "Created a new customer",
       type: "Creation",
@@ -52,6 +50,7 @@ exports.createCustomer = async (req, res) => {
       data: { customer: newCustomer },
     });
   } catch (error) {
+    console.log("TESTING", error);
     res.status(400).json({
       status: "failed",
       message: error,
