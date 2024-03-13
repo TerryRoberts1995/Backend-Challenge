@@ -50,7 +50,6 @@ exports.createCustomer = async (req, res) => {
       data: { customer: newCustomer },
     });
   } catch (error) {
-    console.log("TESTING", error);
     res.status(400).json({
       status: "failed",
       message: error,
@@ -93,6 +92,8 @@ exports.deleteCustomer = async (req, res) => {
       customer: customer._id,
       date: new Date(),
     });
+
+    await customer.remove();
 
     res.status(204).json({
       status: "customer deletion successful.",
